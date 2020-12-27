@@ -10,4 +10,4 @@
 - Организация файловой структуры также выполнена в соответствии с вышеуказнной методологией.
 - В данном проекте применена технология DOM. DOM — интерфейс, позволяющий JS работать с разметкой документа .
 
-[Ссылка на GitHub Pages](https://varentsovandrey.github.io/russian-travel)
+[Ссылка на GitHub Pages](https://varentsovandrey.github.io/mesto/.)
