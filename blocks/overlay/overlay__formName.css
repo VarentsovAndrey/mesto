@@ -1,0 +1,22 @@
+.overlay__formName {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  text-align: left;
+
+  margin: 0 auto 0 auto;
+  width: 238px;
+  border: none;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+
+  padding-bottom: 13px;
+}
+
+@media screen and (min-width: 1280px) {
+  .overlay__formName {
+    width: 358px;
+  }
+}

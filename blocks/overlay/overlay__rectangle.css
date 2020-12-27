@@ -1,0 +1,23 @@
+.overlay__rectangle {
+  width: 238px;
+  height: 46px;
+  background-color: #000000;
+  border-bottom: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 45px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.overlay__rectangle:hover {
+  opacity: 0.8;
+}
+
+@media screen and (min-width: 1280px) {
+  .overlay__rectangle {
+    margin-top: 48px;
+    width: 358px;
+    height: 50px;
+  }
+}

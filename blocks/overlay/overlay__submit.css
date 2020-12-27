@@ -1,0 +1,28 @@
+.overlay__submit {
+  width: 238px;
+  height: 46px;
+  background-color: #000000;
+  border-bottom: #ffffff;
+  border-radius: 2px;
+  color: #ffffff;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  margin-top: 45px;
+}
+
+.overlay__submit:hover {
+  opacity: 0.8;
+}
+
+@media screen and (min-width: 1280px) {
+  .overlay__submit {
+    margin-top: 48px;
+    width: 358px;
+    height: 50px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+}

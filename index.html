@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style/style.css" />
+
+    <title>Mesto</title>
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <img src="./images/Logo.svg" alt="логотип" class="header__logo" />
+        <div class="header__line"></div>
+      </header>
+      <section class="profile">
+        <img
+          src="./images/Avatar.svg"
+          alt="Жак Ив Кусто"
+          class="profile__avatar"
+        />
+        <div class="profile__info">
+          <h1 class="profile__title">Жак-Ив Кусто</h1>
+          <button class="profile__editButton">
+            <div class="profile__rectangle"></div>
+            <img
+              src="./images/Vector (3).svg"
+              alt="ручка"
+              class="profile__pencil"
+            />
+          </button>
+          <h2 class="profile__subtitle">Исследователь океана</h2>
+        </div>
+        <button class="profile__addButton">
+          <div class="profile__rectangleAddButton"></div>
+          <img
+            src="./images/крест.svg"
+            alt="крест"
+            class="profile__crossAddButton"
+          />
+        </button>
+      </section>
+      <section class="elements">
+        <div class="elements__element">
+          <img
+            src="./images/Карачаево.jpg"
+            alt="Карачаево"
+            class="elements__item"
+          />
+          <div class="elements__block">
+            <p class="elements__title">Карачаево-Черкесия</p>
+
+            <p class="elements__button"></p>
+          </div>
+        </div>
+        <div class="elements__element">
+          <img
+            src="./images/Эльбрус.jpg"
+            alt="Эльбрус"
+            class="elements__item"
+          />
+          <div class="elements__block">
+            <p class="elements__title">Гора Эльбрус</p>
+
+            <p class="elements__button"></p>
+          </div>
+        </div>
+        <div class="elements__element">
+          <img src="./images/Домбай.jpg" alt="Домбай" class="elements__item" />
+          <div class="elements__block">
+            <p class="elements__title">Домбай</p>
+
+            <p class="elements__button"></p>
+          </div>
+        </div>
+        <div class="elements__element">
+          <img
+            src="./images/Annie-sprat.jpg"
+            alt="Сосна"
+            class="elements__item"
+          />
+          <div class="elements__block">
+            <p class="elements__title">Annie sprat</p>
+
+            <p class="elements__button"></p>
+          </div>
+        </div>
+        <div class="elements__element">
+          <img
+            src="./images/daniel-sessler.jpg"
+            alt="Обелиск"
+            class="elements__item"
+          />
+          <div class="elements__block">
+            <p class="elements__title">Daniel sessler</p>
+
+            <p class="elements__button"></p>
+          </div>
+        </div>
+        <div class="elements__element">
+          <img
+            src="./images/tamas-tuzes-katai.jpg"
+            alt="Домик"
+            class="elements__item"
+          />
+          <div class="elements__block">
+            <p class="elements__title">Tamas tuzes katai</p>
+
+            <p class="elements__button"></p>
+          </div>
+        </div>
+      </section>
+      <footer class="footer">
+        <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
+      </footer>
+      <section class="overlay">
+        <div class="overlay__popup">
+          <h2 class="overlay__title">Редактировать профиль</h2>
+          <p class="overlay__popupClose"></p>
+
+          <form class="overlay__popupForm">
+            <input type="text" class="overlay__formName" value="Жак-Ив Кусто" />
+            <input
+              type="text"
+              class="overlay__formDiscription"
+              value="Исследователь океана"
+            />
+            <input type="submit" class="overlay__submit" value="Сохранить" />
+          </form>
+        </div>
+      </section>
+    </div>
+    <script src="./javaScript.js"></script>
+  </body>
+</html>
