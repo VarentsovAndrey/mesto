@@ -12,124 +12,129 @@
     <div class="page">
       <header class="header">
         <img src="./images/Logo.svg" alt="логотип" class="header__logo" />
-        <div class="header__line"></div>
       </header>
-      <section class="profile">
-        <img
-          src="./images/Avatar.svg"
-          alt="Жак Ив Кусто"
-          class="profile__avatar"
-        />
-        <div class="profile__info">
-          <h1 class="profile__title">Жак-Ив Кусто</h1>
-          <button class="profile__editButton">
-            <div class="profile__rectangle"></div>
-            <img
-              src="./images/Vector (3).svg"
-              alt="ручка"
-              class="profile__pencil"
-            />
+      <main>
+        <section class="profile">
+          <img
+            src="./images/Avatar.jpg"
+            alt="Жак Ив Кусто"
+            class="profile__avatar"
+          />
+          <div class="profile__info">
+            <h1 class="profile__title">Жак-Ив Кусто</h1>
+            <button class="profile__editor" type="button">
+              <img
+                src="./images/Vector (5).svg"
+                alt="ручка"
+                class="profile__pencil"
+              />
+            </button>
+            <h2 class="profile__subtitle">Исследователь океана</h2>
+          </div>
+          <button class="profile__add">
+            <img src="./images/крест.svg" alt="крест" class="profile__cross" />
           </button>
-          <h2 class="profile__subtitle">Исследователь океана</h2>
-        </div>
-        <button class="profile__addButton">
-          <div class="profile__rectangleAddButton"></div>
-          <img
-            src="./images/крест.svg"
-            alt="крест"
-            class="profile__crossAddButton"
-          />
-        </button>
-      </section>
-      <section class="elements">
-        <div class="elements__element">
-          <img
-            src="./images/Карачаево.jpg"
-            alt="Карачаево"
-            class="elements__item"
-          />
-          <div class="elements__block">
-            <p class="elements__title">Карачаево-Черкесия</p>
-
-            <p class="elements__button"></p>
-          </div>
-        </div>
-        <div class="elements__element">
-          <img
-            src="./images/Эльбрус.jpg"
-            alt="Эльбрус"
-            class="elements__item"
-          />
-          <div class="elements__block">
-            <p class="elements__title">Гора Эльбрус</p>
-
-            <p class="elements__button"></p>
-          </div>
-        </div>
-        <div class="elements__element">
-          <img src="./images/Домбай.jpg" alt="Домбай" class="elements__item" />
-          <div class="elements__block">
-            <p class="elements__title">Домбай</p>
-
-            <p class="elements__button"></p>
-          </div>
-        </div>
-        <div class="elements__element">
-          <img
-            src="./images/Annie-sprat.jpg"
-            alt="Сосна"
-            class="elements__item"
-          />
-          <div class="elements__block">
-            <p class="elements__title">Annie sprat</p>
-
-            <p class="elements__button"></p>
-          </div>
-        </div>
-        <div class="elements__element">
-          <img
-            src="./images/daniel-sessler.jpg"
-            alt="Обелиск"
-            class="elements__item"
-          />
-          <div class="elements__block">
-            <p class="elements__title">Daniel sessler</p>
-
-            <p class="elements__button"></p>
-          </div>
-        </div>
-        <div class="elements__element">
-          <img
-            src="./images/tamas-tuzes-katai.jpg"
-            alt="Домик"
-            class="elements__item"
-          />
-          <div class="elements__block">
-            <p class="elements__title">Tamas tuzes katai</p>
-
-            <p class="elements__button"></p>
-          </div>
-        </div>
-      </section>
-      <footer class="footer">
-        <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
-      </footer>
-      <section class="overlay">
-        <div class="overlay__popup">
-          <h2 class="overlay__title">Редактировать профиль</h2>
-          <p class="overlay__popupClose"></p>
-
-          <form class="overlay__popupForm">
-            <input type="text" class="overlay__formName" value="Жак-Ив Кусто" />
-            <input
-              type="text"
-              class="overlay__formDiscription"
-              value="Исследователь океана"
+        </section>
+        <ul class="elements">
+          <li class="elements__element">
+            <img
+              src="./images/Карачаево.jpg"
+              alt="Карачаево"
+              class="elements__item"
             />
-            <input type="submit" class="overlay__submit" value="Сохранить" />
-          </form>
-        </div>
-      </section>
+            <div class="elements__block">
+              <h2 class="elements__title">Карачаево-Черкесия</h2>
+
+              <button class="elements__button" type="button"></button>
+            </div>
+          </li>
+          <li class="elements__element">
+            <img
+              src="./images/Эльбрус.jpg"
+              alt="Эльбрус"
+              class="elements__item"
+            />
+            <div class="elements__block">
+              <h2 class="elements__title">Гора Эльбрус</h2>
+
+              <button class="elements__button" type="button"></button>
+            </div>
+          </li>
+          <li class="elements__element">
+            <img
+              src="./images/Домбай.jpg"
+              alt="Домбай"
+              class="elements__item"
+            />
+            <div class="elements__block">
+              <h2 class="elements__title">Домбай</h2>
+
+              <button class="elements__button" type="button"></button>
+            </div>
+          </li>
+          <li class="elements__element">
+            <img
+              src="./images/Annie-sprat.jpg"
+              alt="Сосна"
+              class="elements__item"
+            />
+            <div class="elements__block">
+              <h2 class="elements__title">Annie sprat</h2>
+
+              <button class="elements__button" type="button"></button>
+            </div>
+          </li>
+          <li class="elements__element">
+            <img
+              src="./images/daniel-sessler.jpg"
+              alt="Обелиск"
+              class="elements__item"
+            />
+            <div class="elements__block">
+              <h2 class="elements__title">Daniel sessler</h2>
+
+              <button class="elements__button" type="button"></button>
+            </div>
+          </li>
+          <li class="elements__element">
+            <img
+              src="./images/tamas-tuzes-katai.jpg"
+              alt="Домик"
+              class="elements__item"
+            />
+            <div class="elements__block">
+              <h2 class="elements__title">Tamas tuzes katai</h2>
+
+              <button class="elements__button" type="button"></button>
+            </div>
+          </li>
+        </ul>
+        <footer class="footer">
+          <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
+        </footer>
+        <section class="popup">
+          <div class="popup__container">
+            <h2 class="popup__title">Редактировать профиль</h2>
+            <button class="popup__close" type="button"></button>
+
+            <form class="popup__form">
+              <input
+                type="text"
+                name="Имя"
+                value="Жак-Ив Кусто"
+                class="popup__form popup__form_name"
+              />
+              <input
+                type="text"
+                class="popup__form popup__form_discription"
+                name="Описание"
+                value="Исследователь океана"
+              />
+              <input type="submit" class="popup__submit" value="Сохранить" />
+            </form>
+          </div>
+        </section>
+      </main>
     </div>
     <script src="./javaScript.js"></script>
   </body>

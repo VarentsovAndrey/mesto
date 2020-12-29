@@ -1,0 +1,9 @@
+.popup__form_discription {
+  margin-bottom: 45px;
+}
+
+@media screen and (min-width: 1280px) {
+  popup__form_discription {
+    margin-bottom: 48px;
+  }
+}

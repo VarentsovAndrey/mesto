@@ -1,0 +1,29 @@
+.profile__add {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+  align-items: center;
+  margin-top: 36px;
+  width: 282px;
+  height: 50px;
+  border: 2px solid #ffffff;
+  box-sizing: border-box;
+  background-color: #000000;
+}
+
+.profile__add:hover {
+  opacity: 0.6;
+}
+
+@media screen and (min-width: 1280px) {
+  .profile__add {
+    width: 150px;
+    height: 50px;
+    margin: 0;
+    margin-left: 229.25px;
+    margin-top: 35px;
+  }
+}

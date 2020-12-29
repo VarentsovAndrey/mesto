@@ -1,26 +1,28 @@
-const editButton = document.querySelector(".profile__editButton");
-const overlay = document.querySelector(".overlay");
-const popupClose = document.querySelector(".overlay__popupClose");
+let editButton = document.querySelector(".profile__editor");
+let overlay = document.querySelector(".popup");
+let popupClose = document.querySelector(".popup__close");
 
 editButton.addEventListener("click", () => {
-  overlay.classList.add("overlay__active");
+  overlay.classList.add("popup_opened");
 });
 
 popupClose.addEventListener("click", () => {
-  overlay.classList.remove("overlay__active");
+  overlay.classList.remove("popup_opened");
 });
 
-let formElement = overlay.querySelector(".overlay__popupForm");
+let formElement = document.querySelector(".popup__form");
 
 function handleFormSubmit(evt) {
   evt.preventDefault();
 
-  let nameInput = overlay.querySelector(".overlay__formName").value;
+  let nameInput = document.querySelector(".popup__form_name");
 
-  let jobInput = overlay.querySelector(".overlay__formDiscription").value;
-  document.querySelector(".profile__title").textContent = nameInput;
-  document.querySelector(".profile__subtitle").textContent = jobInput;
-  overlay.classList.remove("overlay__active");
+  let jobInput = document.querySelector(".popup__form_discription");
+
+  document.querySelector(".profile__title").textContent = nameInput.value;
+  document.querySelector(".profile__subtitle").textContent = jobInput.value;
+
+  overlay.classList.remove("popup_opened");
 }
 
 formElement.addEventListener("submit", handleFormSubmit);
