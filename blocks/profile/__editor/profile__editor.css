@@ -1,17 +1,12 @@
 .profile__editor {
   width: 18px;
   height: 18px;
-  padding-left: 5.25px;
-  padding-top: 5.25px;
   border: 1px solid #ffffff;
   box-sizing: border-box;
   background-color: #000000;
-  margin: 0;
-  position: absolute;
+  margin-left: 10px;
+  margin-bottom: 6px;
   padding: 0;
-
-  top: 30.25px;
-  left: 245px;
 }
 
 .profile__editor:hover {
@@ -22,7 +17,5 @@
   .profile__editor {
     width: 24px;
     height: 24px;
-    top: 37px;
-    left: 340.125px;
   }
 }

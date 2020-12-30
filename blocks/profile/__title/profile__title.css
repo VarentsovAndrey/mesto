@@ -1,11 +1,9 @@
 .profile__title {
   font-family: Inter;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0;
   font-weight: 500;
   font-size: 27px;
   line-height: 33px;
-  text-align: center;
   color: #ffffff;
 }
 

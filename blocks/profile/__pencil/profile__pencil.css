@@ -1,19 +1,15 @@
 .profile__pencil {
+  display: inline-block;
   background-color: #000000;
-  position: absolute;
-  top: 4.25px;
-  left: 4.25px;
   width: 8px;
   height: 8px;
-  padding: 0;
-  background-size: contain;
+  padding-bottom: 2.5px;
 }
 
 @media screen and (min-width: 1280px) {
   .profile__pencil {
     width: 10px;
     height: 10px;
-    top: 6px;
-    left: 6px;
+    padding-bottom: 0;
   }
 }

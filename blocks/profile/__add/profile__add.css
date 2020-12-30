@@ -12,6 +12,7 @@
   border: 2px solid #ffffff;
   box-sizing: border-box;
   background-color: #000000;
+  border-radius: 2px;
 }
 
 .profile__add:hover {
