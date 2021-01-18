@@ -37,80 +37,8 @@
             <img src="./images/крест.svg" alt="крест" class="profile__cross" />
           </button>
         </section>
-        <ul class="elements">
-          <li class="elements__element">
-            <img
-              src="./images/Карачаево.jpg"
-              alt="Карачаево"
-              class="elements__item"
-            />
-            <div class="elements__block">
-              <h2 class="elements__title">Карачаево-Черкесия</h2>
+        <ul class="elements"></ul>
 
-              <button class="elements__button" type="button"></button>
-            </div>
-          </li>
-          <li class="elements__element">
-            <img
-              src="./images/Эльбрус.jpg"
-              alt="Эльбрус"
-              class="elements__item"
-            />
-            <div class="elements__block">
-              <h2 class="elements__title">Гора Эльбрус</h2>
-
-              <button class="elements__button" type="button"></button>
-            </div>
-          </li>
-          <li class="elements__element">
-            <img
-              src="./images/Домбай.jpg"
-              alt="Домбай"
-              class="elements__item"
-            />
-            <div class="elements__block">
-              <h2 class="elements__title">Домбай</h2>
-
-              <button class="elements__button" type="button"></button>
-            </div>
-          </li>
-          <li class="elements__element">
-            <img
-              src="./images/Annie-sprat.jpg"
-              alt="Сосна"
-              class="elements__item"
-            />
-            <div class="elements__block">
-              <h2 class="elements__title">Annie sprat</h2>
-
-              <button class="elements__button" type="button"></button>
-            </div>
-          </li>
-          <li class="elements__element">
-            <img
-              src="./images/daniel-sessler.jpg"
-              alt="Обелиск"
-              class="elements__item"
-            />
-            <div class="elements__block">
-              <h2 class="elements__title">Daniel sessler</h2>
-
-              <button class="elements__button" type="button"></button>
-            </div>
-          </li>
-          <li class="elements__element">
-            <img
-              src="./images/tamas-tuzes-katai.jpg"
-              alt="Домик"
-              class="elements__item"
-            />
-            <div class="elements__block">
-              <h2 class="elements__title">Tamas tuzes katai</h2>
-
-              <button class="elements__button" type="button"></button>
-            </div>
-          </li>
-        </ul>
         <footer class="footer">
           <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
         </footer>
@@ -136,8 +64,41 @@
             </form>
           </div>
         </section>
+
+        <section class="popupII">
+          <div class="popupII__container">
+            <h2 class="popupII__title">Новое место</h2>
+            <button class="popupII__close" type="button"></button>
+
+            <form class="popupII__form" name="Форма">
+              <input
+                type="text"
+                name="Имя"
+                value="Название"
+                class="popupII__form popupII__form_name"
+              />
+              <input
+                type="text"
+                class="popupII__form popupII__form_discription"
+                name="Ссылка"
+                value="Ссылка на картинку"
+              />
+              <input type="submit" class="popupII__submit" value="Создать" />
+            </form>
+          </div>
+        </section>
       </main>
     </div>
+    <template class="item_template">
+      <li class="elements__element">
+        <img src="" class="elements__item" />
+        <div class="elements__block">
+          <h2 class="elements__title"></h2>
+
+          <button class="elements__button" type="button"></button>
+        </div>
+      </li>
+    </template>
     <script src="./javaScript.js"></script>
   </body>
 </html>

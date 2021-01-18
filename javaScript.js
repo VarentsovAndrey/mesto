@@ -26,3 +26,65 @@ function handleFormSubmit(evt) {
 }
 
 formElement.addEventListener("submit", handleFormSubmit);
+
+let addButton = document.querySelector(".profile__add");
+let overlayII = document.querySelector(".popupII");
+let popupIIClose = document.querySelector(".popupII__close");
+
+addButton.addEventListener("click", () => {
+  overlayII.classList.add("popupII_opened");
+});
+
+popupIIClose.addEventListener("click", () => {
+  overlayII.classList.remove("popupII_opened");
+});
+
+const initialCards = [
+  {
+    name: "Архыз",
+    link:
+      "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg",
+  },
+  {
+    name: "Челябинская область",
+    link:
+      "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg",
+  },
+  {
+    name: "Иваново",
+    link:
+      "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg",
+  },
+  {
+    name: "Камчатка",
+    link:
+      "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg",
+  },
+  {
+    name: "Холмогорский район",
+    link:
+      "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg",
+  },
+  {
+    name: "Байкал",
+    link:
+      "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
+  },
+];
+
+const itemTemplate = document.querySelector(".item_template").content;
+const elements = document.querySelector(".elements");
+
+function render() {
+  initialCards.forEach(renderItem);
+}
+
+function renderItem(element) {
+  const htmlElement = itemTemplate.cloneNode(true);
+  htmlElement.querySelector(".elements__title").textContent = element.name;
+
+  htmlElement.querySelector(".elements__item").src = element.link;
+  elements.append(htmlElement);
+}
+
+render();
