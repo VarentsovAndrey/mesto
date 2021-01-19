@@ -16,7 +16,7 @@
   opacity: 0.5;
 }
 
-.elements__button:active {
+.elements__button_active {
   background-image: url(../../../images/Union.svg);
   opacity: 1;
 }

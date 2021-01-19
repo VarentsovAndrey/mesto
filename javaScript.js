@@ -75,6 +75,11 @@ const initialCards = [
 const itemTemplate = document.querySelector(".item_template").content;
 const elements = document.querySelector(".elements");
 
+const addCards = document.querySelector(".popupII__submit");
+
+const formText = document.querySelector(".popupII__form_name");
+const formLink = document.querySelector(".popupII__form_discription");
+
 function render() {
   initialCards.forEach(renderItem);
 }
@@ -84,15 +89,16 @@ function renderItem(element) {
   htmlElement.querySelector(".elements__title").textContent = element.name;
 
   htmlElement.querySelector(".elements__item").src = element.link;
+
+  htmlElement
+    .querySelector(".elements__button")
+    .addEventListener("click", function (evt) {
+      evt.target.classList.toggle("elements__button_active", true);
+    });
   elements.appendChild(htmlElement);
 }
 
 render();
-
-const addCards = document.querySelector(".popupII__submit");
-
-const formText = document.querySelector(".popupII__form_name");
-const formLink = document.querySelector(".popupII__form_discription");
 
 function adding(evt) {
   evt.preventDefault();
