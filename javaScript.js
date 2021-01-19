@@ -89,12 +89,15 @@ function renderItem(element) {
   htmlElement.querySelector(".elements__title").textContent = element.name;
 
   htmlElement.querySelector(".elements__item").src = element.link;
-
+  htmlElement
+    .querySelector(".elements__delete")
+    .addEventListener("click", handleDelete);
   htmlElement
     .querySelector(".elements__button")
     .addEventListener("click", function (evt) {
       evt.target.classList.toggle("elements__button_active", true);
     });
+
   elements.appendChild(htmlElement);
 }
 
@@ -111,3 +114,7 @@ function adding(evt) {
 }
 
 addCards.addEventListener("click", adding);
+
+function handleDelete(evt) {
+  evt.target.closest(".elements__element").remove();
+}
