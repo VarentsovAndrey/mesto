@@ -84,7 +84,24 @@ function renderItem(element) {
   htmlElement.querySelector(".elements__title").textContent = element.name;
 
   htmlElement.querySelector(".elements__item").src = element.link;
-  elements.append(htmlElement);
+  elements.appendChild(htmlElement);
 }
 
 render();
+
+const addCards = document.querySelector(".popupII__submit");
+
+const formText = document.querySelector(".popupII__form_name");
+const formLink = document.querySelector(".popupII__form_discription");
+
+function adding(evt) {
+  evt.preventDefault();
+  const newCard = itemTemplate.cloneNode(true);
+  newCard.querySelector(".elements__title").textContent = formText.value;
+  console.log(newCard);
+  newCard.querySelector(".elements__item").src = formLink.value;
+  elements.prepend(newCard);
+  overlayII.classList.remove("popupII_opened");
+}
+
+addCards.addEventListener("click", adding);
