@@ -1,4 +1,4 @@
-.popup {
+.item-popup {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -6,9 +6,8 @@
   left: 0;
   background-color: (0, 0, 0, 0.3);
   display: none;
-
   justify-content: center;
   text-align: center;
-  padding: 123px 19px 0px 19px;
+  padding: 86px 40px 0px 40px;
   align-items: flex-start;
 }
