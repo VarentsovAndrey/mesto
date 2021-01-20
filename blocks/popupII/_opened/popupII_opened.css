@@ -1,3 +1,9 @@
 .popupII_opened {
   display: flex;
+  opacity: 0;
+  transition: visibility 0.6s, opacity 0.6s;
+}
+
+.popupII_opened:hover {
+  opacity: 1;
 }
