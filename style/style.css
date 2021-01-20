@@ -44,3 +44,10 @@
 @import url("../blocks/popupII/__submit/popupII__submit.css");
 @import url("../blocks/popupII/__title/popupII__title.css");
 @import url("../blocks/popupII/_opened/popupII_opened.css");
+
+@import url("../blocks/item-popup/item-popup.css");
+@import url("../blocks/item-popup/__container/item-popup__container.css");
+@import url("../blocks/item-popup/__title/item-popup__title.css");
+@import url("../blocks/item-popup/__close/item-popup__close.css");
+@import url("../blocks/item-popup/__element/item-popup__element.css");
+@import url("../blocks/item-popup/_opened/item-popup_opened.css");

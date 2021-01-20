@@ -80,15 +80,21 @@ const addCards = document.querySelector(".popupII__submit");
 const formText = document.querySelector(".popupII__form_name");
 const formLink = document.querySelector(".popupII__form_discription");
 
+const popup = document.querySelector(".item-popup");
+const popupItemClose = document.querySelector(".item-popup__close");
+
+const popupTitle = document.querySelector(".item-popup__title");
+const popupImg = document.querySelector(".item-popup__element");
+
 function render() {
   initialCards.forEach(renderItem);
 }
-
 function renderItem(element) {
   const htmlElement = itemTemplate.cloneNode(true);
   htmlElement.querySelector(".elements__title").textContent = element.name;
 
   htmlElement.querySelector(".elements__item").src = element.link;
+
   htmlElement
     .querySelector(".elements__delete")
     .addEventListener("click", handleDelete);
@@ -97,6 +103,23 @@ function renderItem(element) {
     .addEventListener("click", function (evt) {
       evt.target.classList.toggle("elements__button_active", true);
     });
+
+  htmlElement.querySelector(".elements__item").addEventListener("click", () => {
+    popup.classList.add("item-popup_opened");
+  });
+
+  popupItemClose.addEventListener("click", () => {
+    popup.classList.remove("item-popup_opened");
+  });
+
+  htmlElement
+    .querySelector(".elements__item")
+    .addEventListener("click", handlePopup);
+
+  function handlePopup(evt) {
+    popupTitle.textContent = element.name;
+    popupImg.src = element.link;
+  }
 
   elements.appendChild(htmlElement);
 }
