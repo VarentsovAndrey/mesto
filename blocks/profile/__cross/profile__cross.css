@@ -1,0 +1,12 @@
+.profile__cross {
+  width: 16px;
+  height: 16px;
+  background-size: cover;
+}
+
+@media screen and (min-width: 1280px) {
+  .profile__cross {
+    width: 22px;
+    height: 22px;
+  }
+}

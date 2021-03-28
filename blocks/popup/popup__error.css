@@ -1,0 +1,20 @@
+.popup__error {
+  position: absolute;
+  font-size: 12px;
+  line-height: 15px;
+  color: #ff0000;
+  display: block;
+  text-align: left;
+  width: 358px;
+  margin: 30px 0 0 0;
+  padding: 0 0 9px 0;
+  margin-top: 5px;
+  margin-bottom: 13px;
+  box-sizing: border-box;
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+
+.popup__error_active {
+  opacity: 1;
+}

@@ -1,0 +1,10 @@
+.popup-profile__form_discription {
+  margin-top: 35px;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 1280px) {
+  .popup-profile__form_discription {
+    padding-bottom: 48px;
+  }
+}

@@ -1,0 +1,19 @@
+.popup-profile__title {
+  margin: 0;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 22px;
+  padding-top: 25px;
+  padding-bottom: 75px;
+
+  color: #000000;
+}
+
+@media screen and (min-width: 1280px) {
+  .popup-profile__title {
+    font-size: 24px;
+    line-height: 29px;
+  }
+}

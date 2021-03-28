@@ -1,0 +1,29 @@
+.popup-profile__submit {
+  margin-top: 48px;
+  margin-bottom: 36px;
+  width: 238px;
+  height: 46px;
+  background-color: #000000;
+  border-bottom: #ffffff;
+  border-radius: 2px;
+  color: #ffffff;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  padding: 0;
+}
+
+.popup-profile__submit:hover {
+  opacity: 0.8;
+}
+
+@media screen and (min-width: 1280px) {
+  .popup-profile__submit {
+    width: 358px;
+    height: 50px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+}

@@ -1,0 +1,29 @@
+.popup-preview__close {
+  position: absolute;
+  z-index: -1;
+  top: -43px;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  background-image: url(../../../images/Close\ Icon.svg);
+  margin: 0;
+  cursor: pointer;
+  background-size: cover;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  transition: visibility 0.6s, opacity 0.6s;
+}
+
+.popup-preview__close:hover {
+  opacity: 0.6;
+}
+
+@media screen and (min-width: 1280px) {
+  .popup-preview__close {
+    width: 40px;
+    height: 40px;
+    right: -32.28px;
+    top: -32.28px;
+  }
+}

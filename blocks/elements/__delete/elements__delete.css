@@ -1,0 +1,19 @@
+.elements__delete {
+  background-image: url("../../../images/Group.svg");
+  min-width: 18px;
+  min-height: 19.3px;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  padding: 0;
+  margin: 0;
+  background-size: contain;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: 18px;
+  right: 15px;
+}
+
+.elements__delete:hover {
+  opacity: 0.5;
+}

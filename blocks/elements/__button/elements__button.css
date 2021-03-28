@@ -1,0 +1,22 @@
+.elements__button {
+  background-image: url(../../../images/Лайк.svg);
+
+  cursor: pointer;
+  background-repeat: no-repeat;
+  padding: 0;
+  margin: 0;
+  background-size: contain;
+  min-width: 22px;
+  min-height: 18px;
+  border: none;
+  background-color: transparent;
+}
+
+.elements__button:hover {
+  opacity: 0.5;
+}
+
+.elements__button_active {
+  background-image: url(../../../images/Union.svg);
+  opacity: 1;
+}

@@ -1,0 +1,11 @@
+.popup-preview__element {
+  background-size: cover;
+  min-width: 75vw;
+  min-height: 300px;
+}
+
+@media screen and (min-width: 1280px) {
+  .popup-preview__element {
+    max-height: 75vh;
+  }
+}
