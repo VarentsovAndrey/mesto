@@ -182,10 +182,12 @@ document
     event.stopPropagation();
   });
 
-document.addEventListener("keydown", function (evt) {
+const handleEsc = (evt) => {
+  evt.preventDefault();
   if (evt.key === "Escape") {
-    closeModal(popupProfile);
-    closeModal(popupPreview);
-    closeModal(popupCard);
+    closeModal(document.querySelector(".opened"));
   }
-});
+};
+
+document.addEventListener("keydown", handleEsc);
+document.removeEventListener("keyup", handleEsc);
