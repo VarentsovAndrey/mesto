@@ -3,10 +3,12 @@ const popupProfile = document.querySelector(".popup-profile");
 const popupProfileClose = document.querySelector(".popup-profile__close");
 
 function openModal(element) {
-  element.classList.add("opened");
+  element.classList.add("popup-opened");
+  document.addEventListener("keydown", closePopupEsc);
 }
 function closeModal(element) {
-  element.classList.remove("opened");
+  element.classList.remove("popup-opened");
+  document.removeEventListener("keydown", closePopupEsc);
 }
 editProfilePopup.addEventListener("click", () => {
   openModal(popupProfile);
@@ -182,12 +184,9 @@ document
     event.stopPropagation();
   });
 
-const handleEsc = (evt) => {
-  evt.preventDefault();
+function closePopupEsc(evt) {
   if (evt.key === "Escape") {
-    closeModal(document.querySelector(".opened"));
+    const popupIsOpen = document.querySelector(".popup-opened");
+    closeModal(popupIsOpen);
   }
-};
-
-document.addEventListener("keydown", handleEsc);
-document.removeEventListener("keyup", handleEsc);
+}
