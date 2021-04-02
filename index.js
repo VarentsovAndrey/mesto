@@ -93,8 +93,8 @@ const formLink = document.querySelector(".popup-card__form_discription");
 const popupPreview = document.querySelector(".popup-preview");
 const popupPreviewClose = document.querySelector(".popup-preview__close");
 
-const popupPreviewTitle = document.querySelector(".popup-preview__title");
-const popupPreviewImg = document.querySelector(".popup-preview__element");
+const popupPreviewTitle = document.querySelector(".popup__picture-title");
+const popupPreviewImg = document.querySelector(".popup__picture-image");
 const elementItem = document.querySelector(".elements__item");
 
 popupPreviewClose.addEventListener("click", () => {
@@ -113,6 +113,7 @@ function createCard(element) {
   htmlElement.querySelector(".elements__title").textContent = element.name;
 
   htmlElement.querySelector(".elements__item").src = element.link;
+  htmlElement.querySelector(".elements__item").alt = "Новая карточка";
 
   htmlElement
     .querySelector(".elements__delete")
@@ -162,27 +163,12 @@ render();
 const popups = document.querySelectorAll(".popup");
 
 popups.forEach((popup) => {
-  popup.addEventListener("click", () => {
-    closeModal(popup);
+  popup.addEventListener("click", (evt) => {
+    if (evt.target.classList.contains("popup-opened")) {
+      closeModal(evt.target);
+    }
   });
 });
-document
-  .querySelector(".popup-profile__container")
-  .addEventListener("click", function (event) {
-    event.stopPropagation();
-  });
-
-document
-  .querySelector(".popup-card__container")
-  .addEventListener("click", function (event) {
-    event.stopPropagation();
-  });
-
-document
-  .querySelector(".popup-preview__container")
-  .addEventListener("click", function (event) {
-    event.stopPropagation();
-  });
 
 function closePopupEsc(evt) {
   if (evt.key === "Escape") {

@@ -1,4 +1,4 @@
-.popup-profile__submit {
+.popup__submit {
   margin-top: 48px;
   margin-bottom: 36px;
   width: 238px;
@@ -15,12 +15,12 @@
   padding: 0;
 }
 
-.popup-profile__submit:hover {
+.popup__submit:hover {
   opacity: 0.8;
 }
 
 @media screen and (min-width: 1280px) {
-  .popup-profile__submit {
+  .popup__submit {
     width: 358px;
     height: 50px;
     font-size: 18px;

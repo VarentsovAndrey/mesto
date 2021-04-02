@@ -43,8 +43,10 @@
           <p class="footer__copyright">&copy; 2021 Mesto Russia</p>
         </footer>
         <section class="popup popup-profile">
-          <div class="popup-profile__container">
-            <h2 class="popup-profile__title">Редактировать профиль</h2>
+          <div class="popup__container">
+            <h2 class="popup__form-title popup-profile__title">
+              Редактировать профиль
+            </h2>
             <button
               class="popup__close popup-profile__close"
               type="button"
@@ -60,7 +62,7 @@
                 type="text"
                 name="Имя"
                 value="Жак-Ив Кусто"
-                class="popup__input popup-profile__form popup-profile__form_name"
+                class="popup__input popup__form popup__form_name popup-profile__form popup-profile__form_name"
                 placeholder="Имя"
                 required
                 minlength="2"
@@ -71,7 +73,7 @@
               <input
                 id="Описание-input"
                 type="text"
-                class="popup__input popup-profile__form popup-profile__form_discription"
+                class="popup__input popup__form popup__form_discription popup-profile__form popup-profile__form_discription"
                 name="Описание"
                 value="Исследователь океана"
                 placeholder="О себе"
@@ -81,7 +83,7 @@
               />
               <span id="Описание-input-error" class="popup__error"></span>
 
-              <button type="submit" class="popup__button popup-profile__submit">
+              <button type="submit" class="popup__button popup__submit">
                 Сохранить
               </button>
             </form>
@@ -89,8 +91,8 @@
         </section>
 
         <section class="popup popup-card">
-          <div class="popup-card__container">
-            <h2 class="popup-card__title">Новое место</h2>
+          <div class="popup__container">
+            <h2 class="popup__form-title popup-card__title">Новое место</h2>
             <button
               class="popup__close popup-card__close"
               type="button"
@@ -102,7 +104,7 @@
                 type="text"
                 name="Название"
                 value=""
-                class="popup__input popup-card__form popup-card__form_name"
+                class="popup__input popup__form popup__form_name popup-card__form popup-card__form_name"
                 placeholder="Название"
                 required
                 minlength="2"
@@ -112,27 +114,30 @@
               <input
                 id="Ссылка-input"
                 type="URL"
-                class="popup__input popup-card__form popup-card__form_discription"
+                class="popup__input popup__form popup__form_discription popup-card__form popup-card__form_discription"
                 name="Ссылка"
                 value=""
                 placeholder="Ссылка на картинку"
                 required
               />
               <span id="Ссылка-input-error" class="popup__error"></span>
-              <button type="submit" class="popup__button popup-card__submit">
+              <button
+                type="submit"
+                class="popup__button popup__submit popup-card__submit"
+              >
                 Создать
               </button>
             </form>
           </div>
         </section>
         <section class="popup popup-preview">
-          <div class="popup-preview__container">
+          <div class="popup-picture__container">
             <button
               class="popup__close popup-preview__close"
               type="button"
             ></button>
-            <img src=" " alt="картинка" class="popup-preview__element" />
-            <h2 class="popup-preview__title"></h2>
+            <img src=" " alt="картинка" class="popup__picture-image" />
+            <h2 class="popup__picture-title"></h2>
           </div>
         </section>
       </main>
