@@ -95,7 +95,6 @@ const popupPreviewClose = document.querySelector(".popup-preview__close");
 
 const popupPreviewTitle = document.querySelector(".popup__picture-title");
 const popupPreviewImg = document.querySelector(".popup__picture-image");
-const elementItem = document.querySelector(".elements__item");
 
 popupPreviewClose.addEventListener("click", () => {
   closeModal(popupPreview);
@@ -112,8 +111,10 @@ function createCard(element) {
   const htmlElement = itemTemplate.cloneNode(true);
   htmlElement.querySelector(".elements__title").textContent = element.name;
 
-  htmlElement.querySelector(".elements__item").src = element.link;
-  htmlElement.querySelector(".elements__item").alt = "Новая карточка";
+  const elementItem = htmlElement.querySelector(".elements__item");
+
+  elementItem.src = element.link;
+  elementItem.alt = "Новая карточка";
 
   htmlElement
     .querySelector(".elements__delete")
@@ -141,12 +142,11 @@ function createCard(element) {
 }
 
 const cardAddElement = function (element) {
-  elements.append(element);
+  elements.prepend(element);
 };
 
 function handleAddCard(evt) {
   evt.preventDefault();
-
   const newCard = {
     name: formText.value,
     link: formLink.value,
