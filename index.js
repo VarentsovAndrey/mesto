@@ -43,6 +43,10 @@ const popupCardClose = document.querySelector(".popup-card__close");
 
 addCardButton.addEventListener("click", () => {
   openModal(popupCard);
+  const cardForm = document.querySelector(".popup-card__form");
+  const cardInputs = Array.from(cardForm.querySelectorAll(".popup__input"));
+  const cardButton = cardForm.querySelector(".popup-card__submit");
+  toggleButtonState(cardInputs, cardButton);
 });
 
 popupCardClose.addEventListener("click", () => {
