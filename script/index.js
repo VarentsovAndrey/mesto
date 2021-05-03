@@ -1,6 +1,6 @@
 import { Card } from "./Card.js";
 import { FormValidator } from "./FormValidator.js";
-import { openModal, closeModal, handleFormSubmit } from "./Popup.js";
+import { openModal, closeModal } from "./Popup.js";
 
 const formElement = document.querySelector(".popup-profile__form");
 const popupCard = document.querySelector(".popup-card");
@@ -18,6 +18,10 @@ const popupProfileClose = document.querySelector(".popup-profile__close");
 const editProfilePopup = document.querySelector(".profile__editor");
 const popupProfileForm = document.querySelector(".popup-profile__form");
 const popupCardForm = document.querySelector(".popup-card__form");
+const profileTitle = document.querySelector(".profile__title");
+const profileSubtitle = document.querySelector(".profile__subtitle");
+const nameInput = document.querySelector(".popup-profile__form_name");
+const jobInput = document.querySelector(".popup-profile__form_discription");
 
 const initialCards = [
   {
@@ -70,6 +74,12 @@ popupProfileClose.addEventListener("click", () => {
   closeModal(popupProfile);
 });
 
+const disabledButton = (button) => {
+  button.classList.add("popup__button_disabled");
+
+  button.setAttribute("disabled", true);
+};
+
 const cardAddElement = function (element) {
   elements.prepend(element);
 };
@@ -87,8 +97,18 @@ function handleAddCard(evt) {
 
 addCards.addEventListener("click", handleAddCard);
 
+function handleFormSubmit(evt) {
+  evt.preventDefault();
+
+  profileTitle.textContent = nameInput.value;
+  profileSubtitle.textContent = jobInput.value;
+
+  closeModal(popupProfile);
+}
+
 addCardButton.addEventListener("click", () => {
   openModal(popupCard);
+  disabledButton(addCards);
 });
 
 popupCardClose.addEventListener("click", () => {
