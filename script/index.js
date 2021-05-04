@@ -74,12 +74,6 @@ popupProfileClose.addEventListener("click", () => {
   closeModal(popupProfile);
 });
 
-const disabledButton = (button) => {
-  button.classList.add("popup__button_disabled");
-
-  button.setAttribute("disabled", true);
-};
-
 const handleCardAddElement = function (element) {
   elements.prepend(element);
 };
@@ -91,7 +85,7 @@ function handleAddCard(evt) {
     link: formLink.value,
   };
 
-  renderCard(newCard);
+  handleCardAddElement(renderCard(newCard));
   closeModal(popupCard);
 }
 
