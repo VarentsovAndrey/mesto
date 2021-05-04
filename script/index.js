@@ -80,7 +80,7 @@ const disabledButton = (button) => {
   button.setAttribute("disabled", true);
 };
 
-const cardAddElement = function (element) {
+const handleCardAddElement = function (element) {
   elements.prepend(element);
 };
 
@@ -108,7 +108,7 @@ function handleFormSubmit(evt) {
 
 addCardButton.addEventListener("click", () => {
   openModal(popupCard);
-  disabledButton(addCards);
+  cardFormValidator.disableSubmitButton();
 });
 
 popupCardClose.addEventListener("click", () => {
@@ -129,11 +129,12 @@ popups.forEach((popup) => {
 
 initialCards.forEach((element) => {
   renderCard(element);
+  handleCardAddElement(renderCard(element));
 });
 
 function renderCard(element) {
   const card = new Card(element).getElement();
-  cardAddElement(card);
+  return card;
 }
 
 const profileFormValidator = new FormValidator(config, popupProfileForm);

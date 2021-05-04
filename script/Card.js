@@ -1,6 +1,5 @@
 import { openModal } from "./Popup.js";
 
-const itemTemplate = document.querySelector(".item_template").content;
 const popupPreview = document.querySelector(".popup-preview");
 const popupPreviewTitle = document.querySelector(".popup__picture-title");
 const popupPreviewImg = document.querySelector(".popup__picture-image");
@@ -11,8 +10,9 @@ export class Card {
   }
 
   _makeTemplateElement() {
-    const _htmlElement = itemTemplate
-      .querySelector(".elements__element")
+    const _htmlElement = document
+      .querySelector(".item_template")
+      .content.querySelector(".elements__element")
       .cloneNode(true);
 
     return _htmlElement;
