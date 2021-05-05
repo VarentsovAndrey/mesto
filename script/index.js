@@ -127,7 +127,7 @@ initialCards.forEach((element) => {
 });
 
 function renderCard(element) {
-  const card = new Card(element).getElement();
+  const card = new Card(element, ".item_template").getElement();
   return card;
 }
 

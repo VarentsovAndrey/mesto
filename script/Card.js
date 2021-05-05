@@ -5,17 +5,21 @@ const popupPreviewTitle = document.querySelector(".popup__picture-title");
 const popupPreviewImg = document.querySelector(".popup__picture-image");
 
 export class Card {
-  constructor(element) {
+  constructor(element, templateSelector) {
     this.element = element;
+    this._template = document.querySelector(templateSelector);
   }
 
   _makeTemplateElement() {
-    const _htmlElement = document
-      .querySelector(".item_template")
-      .content.querySelector(".elements__element")
-      .cloneNode(true);
+    // const _htmlElement = document
+    //   .querySelector(".item_template")
+    //   .content.querySelector(".elements__element")
+    //   .cloneNode(true);
 
-    return _htmlElement;
+    // return _htmlElement;
+    return this._template.content
+      .querySelector(".elements__element")
+      .cloneNode(true);
   }
 
   _makeElement() {
