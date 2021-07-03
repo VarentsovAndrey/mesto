@@ -1,6 +1,7 @@
-import { Card } from "./Card.js";
-import { FormValidator } from "./FormValidator.js";
-import { openModal, closeModal } from "./Popup.js";
+import { Card } from "../components/Card.js";
+import { FormValidator } from "../components/FormValidator.js";
+import { openModal, closeModal } from "../components/Popup.js";
+import Section from "../components/Section.js";
 
 const formElement = document.querySelector(".popup-profile__form");
 const popupCard = document.querySelector(".popup-card");
@@ -26,33 +27,27 @@ const jobInput = document.querySelector(".popup-profile__form_discription");
 const initialCards = [
   {
     name: "Архыз",
-    link:
-      "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg",
+    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg",
   },
   {
     name: "Челябинская область",
-    link:
-      "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg",
+    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg",
   },
   {
     name: "Иваново",
-    link:
-      "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg",
+    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg",
   },
   {
     name: "Камчатка",
-    link:
-      "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg",
+    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg",
   },
   {
     name: "Холмогорский район",
-    link:
-      "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg",
+    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg",
   },
   {
     name: "Байкал",
-    link:
-      "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
+    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
   },
 ];
 
@@ -121,10 +116,10 @@ popups.forEach((popup) => {
   });
 });
 
-initialCards.forEach((element) => {
-  renderCard(element);
-  handleCardAddElement(renderCard(element));
-});
+// initialCards.forEach((element) => {
+//   renderCard(element);
+//   handleCardAddElement(renderCard(element));
+// });
 
 function renderCard(element) {
   const card = new Card(element, ".item_template").getElement();
@@ -136,3 +131,17 @@ profileFormValidator.enableValidation();
 
 const cardFormValidator = new FormValidator(config, popupCardForm);
 cardFormValidator.enableValidation();
+
+const CardList = new Section(
+  {
+    items: initialCards,
+    renderer: (items) => {
+      items.forEach((item) => {
+        const cardElement = renderCard(item);
+        CardList.addItem(cardElement);
+      });
+    },
+  },
+  ".elements"
+);
+CardList.renderItems();

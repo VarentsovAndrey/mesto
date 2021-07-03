@@ -11,12 +11,6 @@ export class Card {
   }
 
   _makeTemplateElement() {
-    // const _htmlElement = document
-    //   .querySelector(".item_template")
-    //   .content.querySelector(".elements__element")
-    //   .cloneNode(true);
-
-    // return _htmlElement;
     return this._template.content
       .querySelector(".elements__element")
       .cloneNode(true);
@@ -28,9 +22,8 @@ export class Card {
     this.elementPreview = this._htmlElement.querySelector(".elements__item");
     this._makeEventListeners();
 
-    this._htmlElement.querySelector(
-      ".elements__title"
-    ).textContent = this.element.name;
+    this._htmlElement.querySelector(".elements__title").textContent =
+      this.element.name;
 
     const elementItem = this._htmlElement.querySelector(".elements__item");
     elementItem.src = this.element.link;
