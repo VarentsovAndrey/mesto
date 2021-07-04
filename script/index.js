@@ -1,7 +1,8 @@
 import { Card } from "../components/Card.js";
 import { FormValidator } from "../components/FormValidator.js";
-import { openModal, closeModal } from "../components/Popup.js";
+// import { openModal, closeModal } from "../components/Popup.js";
 import Section from "../components/Section.js";
+import Popup from "../components/Popup.js";
 
 const formElement = document.querySelector(".popup-profile__form");
 const popupCard = document.querySelector(".popup-card");
@@ -60,61 +61,61 @@ const config = {
   errorClass: "popup__error_active",
 };
 
-formElement.addEventListener("submit", handleFormSubmit);
-editProfilePopup.addEventListener("click", () => {
-  openModal(popupProfile);
-});
+// formElement.addEventListener("submit", handleFormSubmit);
+// editProfilePopup.addEventListener("click", () => {
+//   openModal(popupProfile);
+// });
 
-popupProfileClose.addEventListener("click", () => {
-  closeModal(popupProfile);
-});
+// popupProfileClose.addEventListener("click", () => {
+//   closeModal(popupProfile);
+// });
 
-const handleCardAddElement = function (element) {
-  elements.prepend(element);
-};
+// const handleCardAddElement = function (element) {
+//   elements.prepend(element);
+// };
 
-function handleAddCard(evt) {
-  evt.preventDefault();
-  const newCard = {
-    name: formText.value,
-    link: formLink.value,
-  };
+// function handleAddCard(evt) {
+//   evt.preventDefault();
+//   const newCard = {
+//     name: formText.value,
+//     link: formLink.value,
+//   };
 
-  handleCardAddElement(renderCard(newCard));
-  closeModal(popupCard);
-}
+//   handleCardAddElement(renderCard(newCard));
+//   closeModal(popupCard);
+// }
 
-addCards.addEventListener("click", handleAddCard);
+// addCards.addEventListener("click", handleAddCard);
 
-function handleFormSubmit(evt) {
-  evt.preventDefault();
+// function handleFormSubmit(evt) {
+//   evt.preventDefault();
 
-  profileTitle.textContent = nameInput.value;
-  profileSubtitle.textContent = jobInput.value;
+//   profileTitle.textContent = nameInput.value;
+//   profileSubtitle.textContent = jobInput.value;
 
-  closeModal(popupProfile);
-}
+//   closeModal(popupProfile);
+// }
 
-addCardButton.addEventListener("click", () => {
-  openModal(popupCard);
-  cardFormValidator.disableSubmitButton();
-});
+// addCardButton.addEventListener("click", () => {
+//   openModal(popupCard);
+//   cardFormValidator.disableSubmitButton();
+// });
 
-popupCardClose.addEventListener("click", () => {
-  closeModal(popupCard);
-});
+// popupCardClose.addEventListener("click", () => {
+//   closeModal(popupCard);
+// });
 
-popupPreviewClose.addEventListener("click", () => {
-  closeModal(popupPreview);
-});
+// popupPreviewClose.addEventListener("click", () => {
+//   closeModal(popupPreview);
+// });
 
-popups.forEach((popup) => {
-  popup.addEventListener("click", (evt) => {
-    if (evt.target.classList.contains("popup-opened")) {
-      closeModal(evt.target);
-    }
-  });
-});
+// popups.forEach((popup) => {
+//   popup.addEventListener("click", (evt) => {
+//     if (evt.target.classList.contains("popup-opened")) {
+//       closeModal(evt.target);
+//     }
+//   });
+// });
 
 // initialCards.forEach((element) => {
 //   renderCard(element);

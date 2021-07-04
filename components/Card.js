@@ -1,5 +1,3 @@
-import { openModal } from "./Popup.js";
-
 const popupPreview = document.querySelector(".popup-preview");
 const popupPreviewTitle = document.querySelector(".popup__picture-title");
 const popupPreviewImg = document.querySelector(".popup__picture-image");
@@ -51,8 +49,7 @@ export class Card {
   }
 
   _preview() {
-    openModal(popupPreview);
-
+    popupPreview.classList.add("popup-opened");
     popupPreviewTitle.textContent = this.element.name;
     popupPreviewImg.src = this.element.link;
   }
