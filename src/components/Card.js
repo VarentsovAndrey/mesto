@@ -1,11 +1,8 @@
-const popupPreview = document.querySelector(".popup-preview");
-const popupPreviewTitle = document.querySelector(".popup__picture-title");
-const popupPreviewImg = document.querySelector(".popup__picture-image");
-
-export class Card {
-  constructor(element, templateSelector) {
+export default class Card {
+  constructor(element, templateSelector, handleCardClick) {
     this.element = element;
     this._template = document.querySelector(templateSelector);
+    this._handleCardClick = handleCardClick;
   }
 
   _makeTemplateElement() {
@@ -49,9 +46,7 @@ export class Card {
   }
 
   _preview() {
-    popupPreview.classList.add("popup-opened");
-    popupPreviewTitle.textContent = this.element.name;
-    popupPreviewImg.src = this.element.link;
+    this._handleCardClick(this.element);
   }
 
   getElement() {
