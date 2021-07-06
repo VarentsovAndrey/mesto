@@ -1,2 +1,4 @@
 debug.log
 .nojekyll
+node_modules
+dist
