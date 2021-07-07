@@ -1,20 +1,25 @@
 {
   "name": "mesto",
   "version": "1.0.0",
-  "description": "**Проект 4: Mesto **",
+  "description": "* Разработка дизайна по макету (Figma)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rm -rf dist && webpack --mode production",
+    "dev": "webpack serve"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/VarentsovAndrey/mesto.git"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/VarentsovAndrey/mesto/issues"
   },
-  "homepage": "https://github.com/VarentsovAndrey/mesto#readme"
+  "homepage": "https://github.com/VarentsovAndrey/mesto#readme",
+  "devDependencies": {
+    "webpack": "^5.42.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  }
 }

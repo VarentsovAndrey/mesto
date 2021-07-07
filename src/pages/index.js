@@ -18,11 +18,18 @@ import {
   config,
 } from "../utils/constants.js";
 
+const userInfo = new UserInfo({ profileTitle, profileSubtitle });
+
 editProfilePopup.addEventListener("click", () => {
   nameInput.value = userInfo.getUserInfo().name;
-  jobInput.value = userInfo.getUserInfo().job;
+  jobInput.value = userInfo.getUserInfo().about;
   popupProfile.open();
 });
+
+const profileSubmitHandler = function ({ name, about }) {
+  userInfo.setUserInfo({ name, about });
+  popupProfile.close();
+};
 
 addCardButton.addEventListener("click", () => {
   popupAddCard.open();
@@ -30,13 +37,6 @@ addCardButton.addEventListener("click", () => {
 
 const popupProfile = new PopupWithForm(".popup-profile", profileSubmitHandler);
 popupProfile.setEventListeners();
-
-const userInfo = new UserInfo({ name: profileTitle, job: profileSubtitle });
-
-function profileSubmitHandler(data) {
-  userInfo.setUserInfo(data);
-  popupProfile.close();
-}
 
 const popupAddCard = new PopupWithForm(".popup-card", cardSubmitHandler);
 popupAddCard.setEventListeners();
