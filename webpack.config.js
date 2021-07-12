@@ -19,6 +19,7 @@ module.exports = {
     compress: true,
     port: 8800,
   },
+  devtool: "source-map",
   module: {
     rules: [
       {

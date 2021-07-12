@@ -1,55 +1,47 @@
 export default class Card {
-  constructor(element, templateSelector, handleCardClick) {
-    this.element = element;
-    this._template = document.querySelector(templateSelector);
-    this._handleCardClick = handleCardClick;
-  }
+    constructor({ name, link, handleCardClick }, cardSelector) {
+        this._title = name
+        this._imgLink = link
+        this._cardSelector = cardSelector
+        this._handleCardClick = handleCardClick
+    }
+    _getTemplate() {
+        const cardElement = document
+            .querySelector(this._cardSelector)
+            .content
+            .querySelector('.element')
+            .cloneNode(true);
 
-  _makeTemplateElement() {
-    return this._template.content
-      .querySelector(".elements__element")
-      .cloneNode(true);
-  }
+        return cardElement;
+    }
+    generateCard() {
+        this._element = this._getTemplate()
+        this._img = this._element.querySelector('.element__pic')
+        this._setEventListeners()
+        this._element.querySelector('.element__title').textContent = this._title
+        this._img.src = this._imgLink
+        this._img.alt = this._title
 
-  _makeElement() {
-    this._htmlElement = this._makeTemplateElement();
-    this.elementLike = this._htmlElement.querySelector(".elements__button");
-    this.elementPreview = this._htmlElement.querySelector(".elements__item");
-    this._makeEventListeners();
+        return this._element
+    }
+    _handleLike() {
+        this._element.querySelector('.element__like-button').classList.toggle('element__like-button_active')
+    }
 
-    this._htmlElement.querySelector(".elements__title").textContent =
-      this.element.name;
+    _handleRemove() {
+        this._element.remove()
+        this._element = ''
+    }
 
-    const elementItem = this._htmlElement.querySelector(".elements__item");
-    elementItem.src = this.element.link;
-    elementItem.alt = "Новая карточка";
-
-    return this._htmlElement;
-  }
-
-  _makeEventListeners() {
-    const elementDelete = this._htmlElement.querySelector(".elements__delete");
-    const elementLike = this._htmlElement.querySelector(".elements__button");
-    const elementPreview = this._htmlElement.querySelector(".elements__item");
-
-    elementDelete.addEventListener("click", () => this._remove());
-    elementLike.addEventListener("click", () => this._like());
-    elementPreview.addEventListener("click", () => this._preview());
-  }
-
-  _like() {
-    this.elementLike.classList.toggle("elements__button_active");
-  }
-
-  _remove() {
-    this._htmlElement.remove();
-  }
-
-  _preview() {
-    this._handleCardClick(this.element);
-  }
-
-  getElement() {
-    return this._makeElement();
-  }
+    _setEventListeners() {
+        this._element.querySelector('.element__like-button').addEventListener('click', () => {
+            this._handleLike()
+        })
+        this._element.querySelector('.element__delete').addEventListener('click', () => {
+            this._handleRemove()
+        })
+        this._element.querySelector('.element__pic').addEventListener('click', () => {
+            this._handleCardClick()
+        })
+    }
 }

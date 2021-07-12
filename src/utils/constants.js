@@ -1,15 +1,22 @@
-export const addCardButton = document.querySelector(".profile__add");
-export const editProfilePopup = document.querySelector(".profile__editor");
-export const popupProfileForm = document.querySelector(".popup-profile__form");
-export const popupCardForm = document.querySelector(".popup-card__form");
-export const profileTitle = document.querySelector(".profile__title");
-export const profileSubtitle = document.querySelector(".profile__subtitle");
-export const nameInput = document.querySelector(".popup-profile__form_name");
-export const jobInput = document.querySelector(
-  ".popup-profile__form_discription"
-);
+export const editProfile = document.querySelector(".profile__edit-button");
+export const placeButtonAdd = document.querySelector(".profile__add-button");
 
-export const initialCards = [
+export const formEditProfile = document.forms["edit-profile"];
+export const nameInput = formEditProfile.elements.name;
+export const aboutInput = formEditProfile.elements.about;
+
+export const formNewCard = document.forms["new-card"];
+
+export const formSetting = {
+  formSelector: ".popup__form",
+  inputSelector: ".popup__input",
+  submitButtonSelector: ".popup__submit",
+  inactiveButtonClass: "popup__submit_inactive",
+  inputErrorClass: "popup__input_type_error",
+  errorClass: "popup__input-error_active",
+};
+
+export default [
   {
     name: "Архыз",
     link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg",
@@ -35,12 +42,3 @@ export const initialCards = [
     link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
   },
 ];
-
-export const config = {
-  formSelector: ".popup__form",
-  formInput: ".popup__input",
-  buttonPopup: ".popup__button",
-  inactiveButtonClass: "popup__button_disabled",
-  formInputErrorClass: "popup__input_type_error",
-  errorClass: "popup__error_active",
-};
