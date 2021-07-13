@@ -5,6 +5,8 @@ export const formEditProfile = document.forms["edit-profile"];
 export const nameInput = formEditProfile.elements.name;
 export const aboutInput = formEditProfile.elements.about;
 
+export const KEYCODE_ESC = 27;
+
 export const formNewCard = document.forms["new-card"];
 
 export const formSetting = {
