@@ -1,82 +1,150 @@
-import "../pages/index.css";
-import Card from "../components/Card.js";
-import Section from "../components/Section.js";
-import UserInfo from "../components/UserInfo.js";
-import PopupWithImage from "../components/PopupWithImage.js";
-import PopupWithForm from "../components/PopupWithForm.js";
-import FormValidator from "../components/FormValidator.js";
-import initialCards from "../utils/constants.js";
+import "./index.css";
+
+import Card from "./../blocks/components/Card";
+import PopupWithForm from "./../blocks/components/PopupWithForm";
+import PopupWithImage from "./../blocks/components/PopupWithImage";
+import FormValidator from "./../blocks/components/FormValidator";
+import Section from "./../blocks/components/Section";
+import UserInfo from "./../blocks/components/UserInfo";
+import api from "./../blocks/components/Api";
+
 import {
-  editProfile,
-  placeButtonAdd,
-  formEditProfile,
-  nameInput,
-  aboutInput,
-  formNewCard,
-  formSetting,
-} from "../utils/constants.js";
+  defaultFormConfig,
+  profileSelectors,
+  cardSelectors,
+  popupSelectors,
+} from "../utils/constants";
 
-const createCard = (name, link) => {
-  const card = new Card(
-    {
-      name: name,
-      link: link,
-      handleCardClick: () => {
-        popupWithImage.open(name, link);
-      },
-    },
-    ".card_template"
-  );
-  return card.generateCard();
-};
+const profileUserInfo = new UserInfo(profileSelectors);
 
-const cardList = new Section(
-  {
-    items: initialCards,
-    renderer: (data) => {
-      const cardElement = createCard(data.name, data.link);
-      cardList.addItem(cardElement);
-    },
-  },
-  ".elements__list"
+const profileEditor = new PopupWithForm(
+  profileSelectors.editorSelector,
+  (data) =>
+    api.editProfile(data).then(
+      ({ name, about }) =>
+        (profileUserInfo.userInfo = {
+          name,
+          about,
+        })
+    )
 );
-cardList.renderItems();
+profileEditor.setEventListeners();
 
-const popupWithImage = new PopupWithImage(".popup_type_image");
-popupWithImage.setEventListeners();
+const profileEditorValidator = new FormValidator(
+  defaultFormConfig,
+  profileEditor.form
+);
+profileEditorValidator.enableValidation();
 
-const userInfo = new UserInfo(".profile__name", ".profile__caption");
-const popupUserForm = new PopupWithForm(".popup_type_edit", {
-  formSubmit: (data) => {
-    userInfo.setUserInfo(data);
-  },
+const { name: nameInput, about: aboutInput } = profileEditor.form.elements;
+
+const profileEditorOpenButton = document.querySelector(
+  profileSelectors.editButtonSelector
+);
+profileEditorOpenButton.addEventListener("click", () => {
+  const currentUserData = profileUserInfo.userInfo;
+
+  nameInput.value = currentUserData.name;
+  aboutInput.value = currentUserData.about;
+
+  profileEditor.open();
 });
-popupUserForm.setEventListeners();
-const handlePopupEditProfile = () => {
-  const userData = userInfo.getUserInfo();
-  nameInput.value = userData.name;
-  aboutInput.value = userData.about;
-  popupUserForm.open();
-};
 
-const popupCardForm = new PopupWithForm(".popup_type_new-card", {
-  formSubmit: (data) => {
-    const cardElement = createCard(data.place, data.img);
-    cardList.addItem(cardElement);
-    cardFormValidator.disableButton();
-    popupCardForm.close();
-  },
-});
-popupCardForm.setEventListeners();
-const handlePopupNewCard = () => {
-  popupCardForm.open();
-};
+const avatarEditor = new PopupWithForm(popupSelectors.avatarEditor, (data) =>
+  api.updateAvatar(data).then(
+    ({ avatar }) =>
+      (profileUserInfo.userInfo = {
+        avatar,
+      })
+  )
+);
+avatarEditor.setEventListeners();
 
-const profileFormValidator = new FormValidator(formSetting, formEditProfile);
-profileFormValidator.enableValidation();
+const avatarEditorValidator = new FormValidator(
+  defaultFormConfig,
+  avatarEditor.form
+);
+avatarEditorValidator.enableValidation();
 
-const cardFormValidator = new FormValidator(formSetting, formNewCard);
-cardFormValidator.enableValidation();
+const avatarEditorOpenButton = document.querySelector(
+  profileSelectors.avatarSelector
+).parentElement;
+avatarEditorOpenButton.addEventListener("click", () => avatarEditor.open());
 
-editProfile.addEventListener("click", handlePopupEditProfile);
-placeButtonAdd.addEventListener("click", handlePopupNewCard);
+const imageViewer = new PopupWithImage(popupSelectors.imageViewer);
+imageViewer.setEventListeners();
+
+const deleteConfirmation = new PopupWithForm(
+  popupSelectors.deleteConfirmation,
+  () => {
+    const card = deleteConfirmation.currentCard;
+    return api.deleteCard(card.data._id).then(card.remove);
+  }
+);
+deleteConfirmation.setEventListeners();
+
+Promise.all([api.getUserInfo(), api.getInitialCards()])
+  .then(([userData, initialCards]) => {
+    const { name, about, avatar } = userData;
+    profileUserInfo.userInfo = {
+      name,
+      about,
+      avatar,
+    };
+
+    const cardsList = new Section(
+      {
+        items: initialCards.reverse(),
+        renderer: (data) => {
+          data.removable = data.owner._id === userData._id;
+
+          data.liked = data.likes.some((user) => user._id === userData._id);
+
+          const cardInstance = new Card(
+            data,
+            cardSelectors.templateSelector,
+            () => {
+              const { name, link } = data;
+              imageViewer.open({ name, link });
+            },
+            () => {
+              deleteConfirmation.currentCard = cardInstance;
+              deleteConfirmation.open();
+            },
+            () =>
+              (cardInstance.liked ? api.unLikeCard : api.likeCard)(data._id)
+                .then((result) => {
+                  cardInstance.liked = !cardInstance.liked;
+                  cardInstance.updateLikes(result.likes.length);
+                })
+                .catch(console.error)
+          );
+
+          cardsList.setItem(cardInstance.created);
+        },
+      },
+      cardSelectors.listSelector
+    );
+
+    cardsList.renderItems();
+
+    const elementEditor = new PopupWithForm(
+      popupSelectors.elementEditor,
+      (data) => api.addCard(data.title, data.link).then(cardsList.renderer)
+    );
+    elementEditor.setEventListeners();
+
+    const elementEditorValidator = new FormValidator(
+      defaultFormConfig,
+      elementEditor.form
+    );
+    elementEditorValidator.enableValidation();
+
+    const elementEditorOpenButton = document.querySelector(
+      profileSelectors.addButtonSelector
+    );
+    elementEditorOpenButton.addEventListener("click", () =>
+      elementEditor.open()
+    );
+  })
+  .catch(console.error);

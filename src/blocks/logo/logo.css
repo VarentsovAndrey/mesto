@@ -1,0 +1,9 @@
+.logo {
+  display: inline-block;
+  transition-property: opacity;
+  transition-duration: 0.2s;
+}
+
+.logo:hover {
+  opacity: 0.6;
+}

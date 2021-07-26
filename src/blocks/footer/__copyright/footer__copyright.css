@@ -1,0 +1,19 @@
+.footer__copyright {
+  font-size: 18px;
+  line-height: 22px;
+  color: #545454;
+  text-decoration-line: none;
+  transition-property: opacity;
+  transition-duration: 0.2s;
+}
+
+.footer__copyright:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 767px) {
+  .footer__copyright {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}

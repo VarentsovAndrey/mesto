@@ -17,7 +17,7 @@ module.exports = {
     contentBase: path.resolve(__dirname, "./dist"),
     open: true,
     compress: true,
-    port: 8800,
+    port: 1100,
   },
   devtool: "source-map",
   module: {

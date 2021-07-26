@@ -24,6 +24,8 @@
 
 - Настройка WebPack
 
+- JSON API
+
 [Посмотри меня!](https://varentsovandrey.github.io//mesto/)
 
 ---

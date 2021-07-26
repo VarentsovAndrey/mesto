@@ -1,12 +1,15 @@
 .profile__info {
-  align-self: center;
-  padding: 0 17px 0 30px;
-  max-width: 350px;
+  margin-left: 28px;
+  position: relative;
+  padding-right: calc(18px + 24px);
+  max-width: calc(100% - 120px - 150px - 28px * 2 - 42px);
 }
 
-@media screen and (max-width: 569px) {
+@media screen and (max-width: 767px) {
   .profile__info {
-      max-width: 282px;
-      padding: 0 3px 0 20px;
+    margin-left: 0;
+    padding: 0 calc(10px + 18px);
+    margin-top: 26px;
+    max-width: calc(100% - 19px * 2 - 9px * 2);
   }
 }

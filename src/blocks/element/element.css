@@ -1,7 +1,7 @@
 .element {
-    width: 280px;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    position: relative;
+  position: relative;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 0;
 }
