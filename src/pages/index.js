@@ -1,12 +1,12 @@
 import "./index.css";
 
-import Card from "./../blocks/components/Card";
-import PopupWithForm from "./../blocks/components/PopupWithForm";
-import PopupWithImage from "./../blocks/components/PopupWithImage";
-import FormValidator from "./../blocks/components/FormValidator";
-import Section from "./../blocks/components/Section";
-import UserInfo from "./../blocks/components/UserInfo";
-import api from "./../blocks/components/Api";
+import Card from "./../components/Card";
+import PopupWithForm from "./../components/PopupWithForm";
+import PopupWithImage from "./../components/PopupWithImage";
+import FormValidator from "./../components/FormValidator";
+import Section from "./../components/Section";
+import UserInfo from "./../components/UserInfo";
+import api from "./../components/Api";
 
 import {
   defaultFormConfig,
